@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<section class="cta">
+	<h1>Enroll for our Reguler upadate To<br> Anywhere Form The World</h1>
+		<a href=""class="hero-btn">CONTACT US</a>
+
+
+	
+
+
+	</section>
+<div class="row">
+			<div class="Freamwork-col">
+				<h3>Total cases</h3>
+					<p class="lead" style="color:red" >Total Cases   :  {{Total_cases}}</p>
+			</div>
+			<div class="Freamwork-col">
+				<h3>Discharges Cases</h3>
+					<p class="lead" style="color:red" >Discharges Cases   :  {{discharge_cases}}</p>
+			</div>
+			<div class="Freamwork-col">
+				<h3>Active Cases</h3>
+					<p class="lead" style="color:red" >Active Cases   :  {{active_cases}}</p>
+			</div>
+			<div class="Freamwork-col">
+				<h3>Deaths</h3>
+					<p class="lead" style="color:red" >Deaths   :  {{Deaths}}</p>
+			</div>
+		</div>
+		<p class="lead text-center">
+			<a class="btn btn-primary btn-lg" onclick="start()" role="button">Start</a>
+			<a class="btn btn-primary btn-lg" onclick="clear1()" role="button">Stop!</a>
+		  </p>
+{% endblock %}
