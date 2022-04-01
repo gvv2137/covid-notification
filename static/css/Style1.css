@@ -263,21 +263,26 @@ p{
 
 /*------------Footer------*/
 .footer{
-	background-color: #fff3f3;
-	color: #e9342d;
+	color: #e9dedd;
 	width:100%;
 	text-align:center;
 	padding:30px 0 ;
 }
 .footer h4{
-	background-color: #fff3f3;
-	color: rgb(250, 28, 28);
+	
+	color: rgb(255, 255, 255);
 	margin-bottom: 25px;
 	margin-top: 20px;
 	font-weight:600;
 }
 	 
-
+h6{
+	color: rgb(12, 11, 11);
+	font-weight: bold;
+	font-size: large;
+	margin-bottom: 25px;
+	margin-top: 20px;
+}
 	 
 	 
 	 
