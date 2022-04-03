@@ -27,16 +27,64 @@ def hello_world():
 
 @app.route("/about")
 def about():
-    return render_template('aboutus.html')
+    myHtmlData = getData('https://www.mohfw.gov.in/')
+    soup = BeautifulSoup(myHtmlData, 'html.parser')
+
+    spanA = soup.find("li", {'class': 'bg-blue'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    a = spanA.split()
+    active_cases = a[0]
+
+    spanD = soup.find("li", {'class': 'bg-green'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    d = spanD.split()
+    discharge_cases = d[0]
+
+    spanX = soup.find("li", {'class': 'bg-red'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    x = spanX.split()
+    Deaths = x[0]
+
+    Total_cases = int(active_cases) + int(discharge_cases) + int(Deaths)
+    return render_template('aboutus.html', active_cases=active_cases, discharge_cases=discharge_cases, Deaths=Deaths, Total_cases=Total_cases)
 
 
 @app.route("/blog")
 def blog():
-    return render_template('blog.html')
+    myHtmlData = getData('https://www.mohfw.gov.in/')
+    soup = BeautifulSoup(myHtmlData, 'html.parser')
+
+    spanA = soup.find("li", {'class': 'bg-blue'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    a = spanA.split()
+    active_cases = a[0]
+
+    spanD = soup.find("li", {'class': 'bg-green'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    d = spanD.split()
+    discharge_cases = d[0]
+
+    spanX = soup.find("li", {'class': 'bg-red'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    x = spanX.split()
+    Deaths = x[0]
+
+    Total_cases = int(active_cases) + int(discharge_cases) + int(Deaths)
+    return render_template('blog.html', active_cases=active_cases, discharge_cases=discharge_cases, Deaths=Deaths, Total_cases=Total_cases)
 
 @app.route("/contactus")
 def contactus():
-    return render_template('contactus.html')
+    myHtmlData = getData('https://www.mohfw.gov.in/')
+    soup = BeautifulSoup(myHtmlData, 'html.parser')
+
+    spanA = soup.find("li", {'class': 'bg-blue'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    a = spanA.split()
+    active_cases = a[0]
+
+    spanD = soup.find("li", {'class': 'bg-green'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    d = spanD.split()
+    discharge_cases = d[0]
+
+    spanX = soup.find("li", {'class': 'bg-red'}).find_all('strong', {'class': 'mob-hide'})[1].get_text()
+    x = spanX.split()
+    Deaths = x[0]
+
+    Total_cases = int(active_cases) + int(discharge_cases) + int(Deaths)
+    return render_template('contactus.html', active_cases=active_cases, discharge_cases=discharge_cases, Deaths=Deaths, Total_cases=Total_cases)
 
 def getData(url):
     r = requests.get(url)
