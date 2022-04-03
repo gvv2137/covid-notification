@@ -238,7 +238,7 @@ p{
 
 
 .cta{
-	margin: 100px ;
+	margin: 20px;
 	width: auto;
 	background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/logo.jpg);
 	background-position: center;
